@@ -23,29 +23,9 @@ allowed-tools:
 
 ## ブランチ作成時の命名規則
 
-PR作成前にブランチを作成する場合、以下の命名規則に従ってください：
+PR作成前にブランチを作成する場合、チームの命名規則に従ってください。
 
-### 命名形式
-
-```text
-{prefix}/{説明}-{詳細}-{YYYYMMDD}
-```
-
-### プレフィックス
-
-- `feature/`：新機能開発
-- `bugfix/`：バグ修正
-- `hotfix/`：緊急修正
-- `refactor/`：リファクタリング
-- `docs/`：ドキュメント更新
-- `test/`：テスト追加・修正
-- `chore/`：その他の変更（ビルド、CI/CDなど）
-
-### 例
-
-- `feature/user-authentication-20240320`
-- `bugfix/payment-calculation-error-20240320`
-- `refactor/optimize-database-queries-20240320`
+<!-- チームのブランチ命名規則をここに記載してください -->
 
 ## ステップ1：PR情報の取得
 

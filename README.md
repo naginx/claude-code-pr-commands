@@ -42,13 +42,13 @@ Cursorの「基本設定 > Cursor Settings > Rules and Commands」から「Impor
 /pr:create
 
 # 既存PRの説明文を更新
-/pr:create https://github.com/owner/repo/pull/123
+/pr:create https://github.com/{owner}/{repo}/pull/{number}
 
 # レビュー準備（PRの構造を理解）
-/pr:assist-review https://github.com/owner/repo/pull/123
+/pr:assist-review https://github.com/{owner}/{repo}/pull/{number}
 
 # フィードバック対応（レビューコメントの分析・対応案生成）
-/pr:analyze-feedback https://github.com/owner/repo/pull/123
+/pr:analyze-feedback https://github.com/{owner}/{repo}/pull/{number}
 ```
 
 ## 前提条件
