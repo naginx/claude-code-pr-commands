@@ -179,19 +179,6 @@ gh auth refresh
 gh auth login
 ```
 
-### GitHub APIレート制限
-
-**症状**: `API rate limit exceeded` エラーが発生
-
-**対処法**:
-```bash
-# レート制限の状態を確認
-gh api rate_limit
-
-# レート制限に達した場合は、ユーザーに待機時間を伝える
-# 通常は1時間以内にリセットされる
-```
-
 ### PRが見つからない
 
 **症状**: `pull request not found` エラーが発生
