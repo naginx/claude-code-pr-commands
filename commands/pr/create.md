@@ -9,7 +9,7 @@ arguments:
   - name: base-branch
     description: ベースブランチ名
     required: false
-    default: "main"
+    default: "develop"
 allowed-tools:
   - Bash(gh:*)
   - Bash(git:*)
@@ -29,9 +29,37 @@ PR作成前にブランチを作成する場合、チームの命名規則に従
 
 <!-- チームのブランチ命名規則をここに記載してください -->
 
-## ステップ1：PR情報の取得
+## ステップ1：モード判定
 
-ユーザーからPR URLまたはリポジトリ情報を取得してください。以下の形式を受け付けます：
+引数の有無と既存PRの存在により、**新規作成モード**または**既存PR更新モード**を判定します。
+
+### 判定フロー
+
+```bash
+# 1. 現在のブランチを取得
+current_branch=$(git branch --show-current)
+
+# 2. 現在のブランチで既存PRがあるか確認
+gh pr view "$current_branch" --json number,url 2>/dev/null
+```
+
+| 条件 | モード | 動作 |
+|------|--------|------|
+| 引数なし + PRが存在しない | 新規作成 | 現在のブランチから `develop`（デフォルト）に向けたPRを新規作成 |
+| 引数なし + PRが既に存在 | 既存PR更新 | 現在のブランチのPR説明文を更新 |
+| PR URLを指定 | 既存PR更新 | 指定されたPRの説明文を更新 |
+
+### 新規作成モードの場合
+
+```bash
+# リポジトリ情報を取得
+gh repo view --json nameWithOwner --jq '.nameWithOwner'
+```
+
+### 既存PR更新モードの場合
+
+以下の形式を受け付けます：
+- 引数なし（現在のブランチにPRが存在する場合）
 - GitHub PR URL: `https://github.com/{owner}/{repo}/pull/{number}`
 - リポジトリ情報: `{owner}/{repo}` + PR番号
 
