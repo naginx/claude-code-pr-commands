@@ -7,7 +7,7 @@ arguments:
     default: ""
     argument-hint: "PR URLを入力してください。形式: https://github.com/{owner}/{repo}/pull/{number}"
 allowed-tools:
-  - Bash
+  - Bash(gh:*)
   - Read
   - Write
   - Grep

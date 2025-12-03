@@ -7,7 +7,7 @@ arguments:
     default: false
     argument-hint: "-p または --push を指定するとコミット後に自動的にpushします"
 allowed-tools:
-  - Bash
+  - Bash(git:*)
   - Read
   - Grep
 ---

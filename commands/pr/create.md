@@ -11,7 +11,9 @@ arguments:
     required: false
     default: "main"
 allowed-tools:
-  - Bash
+  - Bash(gh:*)
+  - Bash(git:*)
+  - Bash(cat:*)
   - Read
   - Write
   - Glob

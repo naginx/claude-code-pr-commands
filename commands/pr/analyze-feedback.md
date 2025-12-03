@@ -7,7 +7,7 @@ arguments:
     default: ""
     argument-hint: "PR URLを入力してください。未指定の場合は対話的に取得します。"
 allowed-tools:
-  - Bash
+  - Bash(gh:*)
   - Read
   - Write
 ---
